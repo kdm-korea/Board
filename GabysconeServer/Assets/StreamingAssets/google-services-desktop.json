@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "819447030996",
+    "firebase_url": "https://gabyscon-game.firebaseio.com",
+    "project_id": "gabyscon-game",
+    "storage_bucket": "gabyscon-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819447030996:android:6aa46809bf466d0c074741",
+        "android_client_info": {
+          "package_name": "com.kdm.GabysconeServer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819447030996-kbf0v44jr7nng9t8n28hb9n72jh5dbfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcAAH5a1p3_DwcgU6NN8EC012FowNyiO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819447030996-kbf0v44jr7nng9t8n28hb9n72jh5dbfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
