@@ -1,1 +1,1 @@
-# Gabyscone-Game_Server
+# Spring & JPA web service
