@@ -4,6 +4,7 @@ plugins {
     id 'java'
 }
 
+
 group = 'com.board'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -28,7 +29,10 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
 }
+
+ext['hibernate.version'] = '5.2.11.Final'
 
 test {
     useJUnitPlatform()
