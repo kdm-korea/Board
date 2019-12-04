@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
 public class PostsRepositoryTest {
 
     @Autowired
-    PostsRepository postsRepository;
+    private PostsRepository postsRepository;
 
     @After
     public void cleanup(){

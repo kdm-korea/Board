@@ -1,5 +1,6 @@
 package com.board.webservice.domain.posts;
 
+
 import com.board.webservice.domain.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -14,7 +15,7 @@ import javax.persistence.Id;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Posts extends BaseTimeEntity {
+public class Posts extends BaseTimeEntxity {
 
     @Id
     @GeneratedValue
