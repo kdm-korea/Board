@@ -1,18 +1,25 @@
 package com.board.webservice.domain.posts;
 
+
 import com.board.webservice.domain.BaseTimeEntity;
 import lombok.AccessLevel;
-import lombok.*;
-import javax.persistence.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Posts extends BaseTimeEntity {
+public class Posts extends BaseTimeEntxity {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
 
     @Column(length = 500, nullable = false)
     private String title;
@@ -23,7 +30,7 @@ public class Posts extends BaseTimeEntity {
     private String author;
 
     @Builder
-    public Posts(String title, String content, String author) {
+    public Posts(String title, String content, String author){
         this.title = title;
         this.content = content;
         this.author = author;

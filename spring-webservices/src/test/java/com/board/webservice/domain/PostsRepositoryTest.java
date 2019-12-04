@@ -1,31 +1,28 @@
 package com.board.webservice.domain;
 
-import com.board.webservice.domain.posts.Posts;
 import com.board.webservice.domain.posts.PostsRepository;
+import com.board.webservice.domain.posts.Posts;
 import org.junit.After;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestTemplate;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PostsRepositoryTest {
 
     @Autowired
-    PostsRepository postsRepository;
+    private PostsRepository postsRepository;
 
     @After
-    public void claenUp(){
+    public void cleanup(){
         postsRepository.deleteAll();
     }
 
@@ -33,33 +30,19 @@ public class PostsRepositoryTest {
     public void 게시글저장_불러오기(){
         //given
         postsRepository.save(Posts.builder()
-            .title("테스트 게시글")
-            .content("테스트 본문")
-            .author("kdm_korea@naver.com")
-            .build());
+                .title("테스트 게시글")
+                .content("테스트 본문")
+                .author("kdm_korea@naver.com")
+                .build());
 
         //when
-        List<Posts> postsList = postsRepository.findAll();
+        List<Posts> posts = postsRepository.findAll();
 
         //then
-        Posts posts = postsList.get(0);
-        assertThat(posts.getTitle(), is("테스트 게시글"));
-        assertThat(posts.getContent(), is("테스트 본문"));
+        Posts post = posts.get(0);
+        assertThat(post.getTitle(), is("테스트 게시글"));
+        assertThat(post.getContent(), is("테스트 본문"));
     }
 
-    @Test
-    public void BaseTimeEntity_등록(){
-        LocalDateTime now = LocalDateTime.now();
-        postsRepository.save(Posts.builder()
-            .title("테스트 게시글")
-            .content("테스트 본문")
-            .author("kdm_korea@naver.com")
-            .build());
 
-        List<Posts> postsList = postsRepository.findAll();
-
-        Posts posts = postsList.get(0);
-        assertTrue(posts.getCreatedDate().isAfter(now));
-        assertTrue(posts.getModifiedDate().isAfter(now));
-    }
 }

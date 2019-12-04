@@ -1,4 +1,4 @@
-package com.board.webservice.dto.post;
+package com.board.webservice.web.dto;
 
 import com.board.webservice.domain.posts.Posts;
 import lombok.Getter;
@@ -9,13 +9,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
-    private String title;
+
+    private String titile;
     private String content;
     private String author;
 
     public Posts toEntity(){
         return Posts.builder()
-                .title(title)
+                .title(titile)
                 .content(content)
                 .author(author)
                 .build();

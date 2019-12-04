@@ -1,7 +1,7 @@
 package com.board.webservice.web;
 
 import com.board.webservice.domain.posts.PostsRepository;
-import com.board.webservice.dto.post.PostsSaveRequestDto;
+import com.board.webservice.web.dto.PostsSaveRequestDto;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class WebRestController {
 
-    private PostsRepository postRepository;
+    private PostsRepository postsRepository;
 
     @GetMapping("/hello")
     public String hello(){
         return "HelloWorld";
     }
 
-    @PostMapping("/posts")
+    @PostMapping("/post")
     public void savePosts(@RequestBody PostsSaveRequestDto dto){
-        postRepository.save(dto.toEntity());
+        postsRepository.save(dto.toEntity());
     }
 }
