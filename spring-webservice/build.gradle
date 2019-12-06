@@ -30,6 +30,12 @@ dependencies {
     }
     implementation 'junit:junit:4.12'
     compileClasspath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
+
+    compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
+    compile 'com.github.jknack:handlebars-helpers:4.0.7',
+            'com.github.jknack:handlebars-jackson2:4.0.7',
+            'com.github.jknack:handlebars-humanize:4.0.7',
+            'com.github.jknack:handlebars-markdown:4.0.7'
 }
 
 ext['hibernate.version'] = '5.2.11.Final'
