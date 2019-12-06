@@ -28,6 +28,7 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    implementation 'junit:junit:4.12'
     compileClasspath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
 }
 
