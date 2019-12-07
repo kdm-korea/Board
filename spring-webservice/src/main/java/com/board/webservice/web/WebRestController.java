@@ -1,6 +1,7 @@
 package com.board.webservice.web;
 
 import com.board.webservice.dto.posts.PostsSaveRequestDto;
+import com.board.webservice.service.PostsService;
 import com.board.webservice.web.domain.posts.PostsRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebRestController {
 
-    PostsRepository postsRepository;
+    private PostsService postsService;
 
     @GetMapping("/hello")
     public String hello(){
@@ -18,7 +19,7 @@ public class WebRestController {
     }
 
     @PostMapping("/posts")
-    public void savePosts(@RequestBody PostsSaveRequestDto dto){
-        postsRepository.save(dto.toEntity());
+    public Long savePosts(@RequestBody PostsSaveRequestDto dto){
+        return postsService.save(dto);
     }
 }
