@@ -3,7 +3,6 @@ package com.board.webservice.service;
 import com.board.webservice.dto.PostsMainResponseDto;
 import com.board.webservice.dto.posts.PostsSaveRequestDto;
 import com.board.webservice.web.domain.posts.PostsRepository;
-import com.sun.tools.javac.jvm.ByteCodes;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +19,9 @@ public class PostsService {
     public Long save(PostsSaveRequestDto dto){
         return postsRepository.save(dto.toEntity()).getId();
     }
+
+    @Transactional
+    public void delete(Long id){postsRepository.deleteById(id);}
 
     @Transactional
     public List<PostsMainResponseDto> findAllDesc(){
